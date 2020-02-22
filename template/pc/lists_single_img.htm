@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<title>{$eyou.field.seo_title}</title>
+<meta name="description" content="{$eyou.field.seo_description}" />
+<meta name="keywords" content="{$eyou.field.seo_keywords}" />
+<link rel="Shortcut Icon" href="{eyou:global name='web_cmspath' /}/favicon.ico" type="image/x-icon" />
+<link rel='stylesheet' id='main-css'  href='{eyou:global name='web_templets_pc' /}/skin/css/style.css' type='text/css' media='all' />
+<script type='text/javascript' src='{eyou:global name='web_templets_pc' /}/skin/js/jquery.js'></script>
+<link rel='https://api.w.org/' href='http://demo.themebetter.com/xiu/wp-json/' />
+<style>
+.container {
+	max-width: 800px
+}
+</style>
+<!--[if lt IE 9]><script src="{eyou:global name='web_templets_pc' /}/skin/js/html5.js"></script><![endif]-->
+</head>
+<body class="page-template page-template-pages page-template-likes page-template-pageslikes-php page page-id-210 m-home-most focusslide_s_m uimo ui-c3">
+<section class="container">
+  {eyou:include file="header.htm" /}
+  <div class="content-wrap">
+    <div class="content page-likes no-sidebar">
+      <h1 class="title"><strong>{$eyou.field.typename}</strong></h1>
+      <ul class="likepage">
+      {eyou:arclist row='40' titlelen='20' orderby='click' channelid='1'}
+        <li><a href="{$field.arcurl}"><img src="{$field.litpic}" class="thumb"/>
+          <h2>{$field.title}</h2>
+          </a><a href="javascript:;" class="post-like" >阅读(<span>{$field.click}</span>)</a></li>
+       {/eyou:arclist}     
+      </ul>
+      
+    </div>
+  </div>
+  {eyou:include file="footer.htm" /}
+</section>
+<script>
+window.jui = {
+	uri: '/',
+	roll: '1 2 3',
+	ajaxpager: '0'
+}
+</script> <script type='text/javascript' src='{eyou:global name='web_templets_pc' /}/skin/js/bootstrap.js'></script> 
+<script type='text/javascript' src='{eyou:global name='web_templets_pc' /}/skin/js/hammer.min.js'></script> 
+<script type='text/javascript' src='{eyou:global name='web_templets_pc' /}/skin/js/custom.js'></script> 
+<script type='text/javascript' src='{eyou:global name='web_templets_pc' /}/skin/js/wp-embed.min.js'></script>
+</body>
+</html>

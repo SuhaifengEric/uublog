@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<title>{$eyou.field.seo_title}</title>
+<meta name="description" content="{$eyou.field.seo_description}" />
+<meta name="keywords" content="{$eyou.field.seo_keywords}" />
+<link rel="Shortcut Icon" href="{eyou:global name='web_cmspath' /}/favicon.ico" type="image/x-icon" />
+<link rel='stylesheet' id='main-css'  href='{eyou:global name='web_templets_pc' /}/skin/css/style.css' type='text/css' media='all' />
+<script type='text/javascript' src='{eyou:global name='web_templets_pc' /}/skin/js/jquery.js'></script>
+<style>
+.container {
+	max-width: 800px
+}
+</style>
+<!--[if lt IE 9]><script src="{eyou:global name='web_templets_pc' /}/skin/js/html5.js"></script><![endif]-->
+</head>
+<body class="post-template-default single single-post postid-105 single-format-standard m-home-most focusslide_s_m uimo ui-c3">
+<section class="container">
+  {eyou:include file="header.htm" /}
+  <div class="content-wrap">
+    <div class="content">
+      <header class="article-header">
+        <div class="breadcrumbs"><span class="text-muted">当前位置：</span>{eyou:position style="" /}</div>
+        <h1 class="article-title"><a href="{$eyou.field.arcurl}">{$eyou.field.title}</a></h1>
+        <ul class="article-meta">
+          <li>{$eyou.field.author} 发布于 {$eyou.field.add_time|MyDate='Y-m-d',###}</li>
+          <li>分类：<a href="{$eyou.field.typeurl}" rel="category tag">{$eyou.field.typename}</a></li>
+          <li><span class="post-views">阅读({eyou:arcclick /})</span></li>
+        </ul>
+      </header>
+      <article class="article-content">
+        {$eyou.field.content} 
+        <p class="post-copyright">未经允许不得转载：<a href="{eyou:global name='web_cmsurl' /}">{eyou:global name='web_name' /}</a> &raquo; <a href="{$eyou.field.arcurl}">{$eyou.field.title}</a></p>
+      </article>
+      
+      <div class="share-single">
+        <div class="action-share bdsharebuttonbox"> 分享到： <a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a> <a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a> <a class="bds_weixin" data-cmd="weixin" title="分享到微信"></a> <a class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a> <a class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a> <a class="bds_bdhome" data-cmd="bdhome" title="分享到百度新首页"></a> <a class="bds_tqf" data-cmd="tqf" title="分享到腾讯朋友"></a> <a class="bds_renren" data-cmd="renren" title="分享到人人网"></a> <a class="bds_diandian" data-cmd="diandian" title="分享到点点网"></a> <a class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a> <a class="bds_ty" data-cmd="ty" title="分享到天涯社区"></a> <a class="bds_kaixin001" data-cmd="kaixin001" title="分享到开心网"></a> <a class="bds_taobao" data-cmd="taobao"></a> <a class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a> <a class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a> <a class="bds_twi" data-cmd="twi" title="分享到Twitter"></a> <a class="bds_mail" data-cmd="mail" title="分享到邮件分享"></a> <a class="bds_copy" data-cmd="copy" title="分享到复制网址"></a> <a class="bds_more" data-cmd="more">更多</a></div>
+        <script>
+window._bd_share_config = {
+    common: {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": "",
+        "bdStyle": "0"
+    },
+    share: [{
+        bdCustomStyle: "{eyou:global name='web_templets_pc' /}/skin/css/share.css"
+    }]
+}
+with(document) 0[(getElementsByTagName("head")[0] || body).appendChild(createElement("script")).src = "http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=" + ~(-new Date() / 36e5)];
+</script></div>
+      <div class="article-tags"> 标签：{eyou:tag sort='now' getall='0' row='100'}<a href='{$field.link}'>{$field.tag}</a>{/eyou:tag} </div>
+      <nav class="article-nav"> 
+      <span class="article-nav-prev">
+      {eyou:prenext get='pre' empty='<span>上一篇</span><a>暂无</a>'}
+      <span>上一篇</span><a href="{$field.arcurl}">{$field.title}</a>
+      {/eyou:prenext}
+      </span> 
+      <span class="article-nav-next">
+      {eyou:prenext get='next' empty='<span>下一篇</span><a>暂无</a>'}
+      <span>下一篇</span><a href="{$field.arcurl}">{$field.title}</a>
+      {/eyou:prenext}
+      </span> 
+      </nav>
+      
+      <div class="sticky">
+        <h3 class="title"><strong>热门推荐</strong></h3>
+        <ul>
+        {eyou:arclist row='8' titlelen='20' orderby='click'}
+          <li class="item"><a target="_blank" href="{$field.arcurl}"><img src="{$field.litpic}" class="thumb"/>{$field.title}</a></li>
+        {/eyou:arclist}      
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+  {eyou:include file="right.htm" /}
+  {eyou:include file="footer.htm" /}
+</section>
+<div class="rewards-popover-mask" data-event="rewards-close"></div>
+
+<script>
+window.jui = {
+	uri: '/',
+	roll: '1 2 3',
+	ajaxpager: '0'
+}
+</script> 
+<script type='text/javascript' src='{eyou:global name='web_templets_pc' /}/skin/js/bootstrap.js'></script> 
+<script type='text/javascript' src='{eyou:global name='web_templets_pc' /}/skin/js/hammer.min.js'></script> 
+<script type='text/javascript' src='{eyou:global name='web_templets_pc' /}/skin/js/custom.js'></script> 
+<script type='text/javascript' src='{eyou:global name='web_templets_pc' /}/skin/js/wp-embed.min.js'></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<header class="header">
+    <h1 class="logo"><a href="{eyou:global name='web_cmsurl' /}" title="{eyou:global name='web_name' /}"><img class="logo-img-pc" src="{eyou:global name='web_logo' /}" alt="{eyou:global name='web_name' /}"><img class="logo-img-m" src="{eyou:global name='web_attr_1' /}" alt="{eyou:global name='web_name' /}">{eyou:global name='web_name' /}</a></h1>
+    <ul class="nav">
+      <li class="navmore"></li>
+      {eyou:channel type="top" row="60" id="field"}
+      <li class=""><a href="{$field.typeurl}"> <span class="glyphicon glyphicon-{$i}"></span> {$field.typename}</a>
+       {eyou:notempty name="$field.children"}
+        <ul class="sub-menu">
+        {eyou:channel name="$field.children" row="100" id="field2"}
+          <li class=""><a href="{$field2.typeurl}">{$field2.typename}</a></li>
+        {/eyou:channel}  
+        </ul>
+       {/eyou:notempty}    
+      </li>
+       {/eyou:channel}
+    </ul>
+    {eyou:searchform type='default'}
+    <form method="get" class="search-form" action="{$field.action}">
+      {$field.hidden}
+      <input class="form-control" name="keywords" type="text" placeholder="输入关键字" value="">
+      <input class="btn" type="submit" value="搜索">
+    </form>
+    {/eyou:searchform}
+    <span class="glyphicon glyphicon-search m-search"></span>
+    <div class="feeds"> 
+    <a class="feed feed-weibo" href="{eyou:global name='web_attr_2' /}" target="_blank"><i></i>微博</a> 
+    <a class="feed feed-tqq" href="{eyou:global name='web_attr_3' /}" target="_blank"><i></i>腾讯微博</a> 
+    <a class="feed feed-rss" href="{eyou:global name='web_attr_4' /}" target="_blank"><i></i>RSS订阅</a> 
+    <a class="feed feed-weixin" href="javascript:;" title="关注”{eyou:global name='web_attr_7' /}“" data-content="<img src='{eyou:global name='web_attr_8' /}'>"><i></i>微信<span class="feed-weixin-hide"><img src='{eyou:global name='web_attr_8' /}'></span></a> 
+    </div>
+    <div class="slinks">
+    {eyou:adv pid='3' row='10' mod='2'}
+     <a href="{$field.links}" title="{$field.title}">{$field.title}</a> {eyou:eq name='$mod' value='0'}<br>{/eyou:eq}
+      {/eyou:adv}
+      </div>
+  </header>

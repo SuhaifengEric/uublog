@@ -1,0 +1,9 @@
+<article class="excerpt excerpt-one">
+  <header><a class="cat label label-important" href="{$field.typeurl}">{$field.typename}<i class="label-arrow"></i></a>
+    <h2><a target="_blank" href="{$field.arcurl}" title="{$field.title}">{$field.title}</a></h2>
+  </header>
+  <p class="text-muted time"></p>
+  <p class="focus"><a target="_blank" href="{$field.arcurl}" class="thumbnail"><span><img src="{$field.litpic}" class="thumb"/></span></a></p>
+  <p class="note">{$field.seo_description|html_msubstr=###,0,80,true}</p>
+  <p class="text-muted views"><span class="post-views">阅读({$field.click})</span><span class="post-tags">标签：{eyou:tag sort='now' getall='0' row='10' id='field2'} <a href='{$field2.link}'>{$field2.tag}</a>&nbsp;&nbsp;{/eyou:tag}</span></p>
+</article>

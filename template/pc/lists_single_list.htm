@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<title>{$eyou.field.seo_title}</title>
+<meta name="description" content="{$eyou.field.seo_description}" />
+<meta name="keywords" content="{$eyou.field.seo_keywords}" />
+<link rel="Shortcut Icon" href="{eyou:global name='web_cmspath' /}/favicon.ico" type="image/x-icon" />
+<link rel='stylesheet' id='main-css'  href='{eyou:global name='web_templets_pc' /}/skin/css/style.css' type='text/css' media='all' />
+<script type='text/javascript' src='{eyou:global name='web_templets_pc' /}/skin/js/jquery.js'></script>
+<style>
+.container {
+	max-width: 800px
+}
+</style>
+<!--[if lt IE 9]><script src="{eyou:global name='web_templets_pc' /}/skin/js/html5.js"></script><![endif]-->
+</head>
+<body class="page-template page-template-pages page-template-archives page-template-pagesarchives-php page page-id-80 m-home-most focusslide_s_m uimo ui-c3">
+<section class="container">
+  {eyou:include file="header.htm" /}
+  <div class="content-wrap">
+    <div class="content page-archives">
+      <h1 class="title"><strong>{$eyou.field.typename}</strong></h1>
+      <article class="archives">
+        
+        <div class="item">
+          <ul class="archives-list"  id="list002">
+          {eyou:arclist row='40' titlelen='20' orderby='now' channelid='1' tagid='list002'}
+            <li>
+              <h3></h3><time>{$field.add_time|MyDate='Y-m-d',###}</time>
+              <a href="{$field.arcurl}">{$field.title}</a> <span class="text-muted">阅读({$field.click})</span> </li>
+          {/eyou:arclist}    
+          </ul>
+        </div>
+        {eyou:arcpagelist tagid='list002' pagesize='20'}
+      <div class="pagination pagination-multi" id="ajax-load-posts">
+        <ul>
+          <li class="next-page"> <a class="button" href="javascript:void(0);" {$field.onclick}>点击加载更多</a></li>
+        </ul>
+      </div>
+     {/eyou:arcpagelist}
+      </article>
+    </div>
+  </div>
+  {eyou:include file="right.htm" /}
+  {eyou:include file="footer.htm" /}
+</section>
+<script>
+window.jui = {
+	uri: '/',
+	roll: '1 2 3',
+	ajaxpager: '0'
+}
+</script> <script type='text/javascript' src='{eyou:global name='web_templets_pc' /}/skin/js/bootstrap.js'></script> 
+<script type='text/javascript' src='{eyou:global name='web_templets_pc' /}/skin/js/hammer.min.js'></script> 
+<script type='text/javascript' src='{eyou:global name='web_templets_pc' /}/skin/js/custom.js'></script> 
+<script type='text/javascript' src='{eyou:global name='web_templets_pc' /}/skin/js/wp-embed.min.js'></script>
+</body>
+</html>

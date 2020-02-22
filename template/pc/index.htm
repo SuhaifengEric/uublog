@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<title>{eyou:global name='web_title' /}</title>
+<meta name="description" content="{eyou:global name='web_description' /}" />
+<meta name="keywords" content="{eyou:global name='web_keywords' /}" />
+<link href="{eyou:global name='web_cmspath' /}/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link rel='stylesheet' id='main-css'  href='{eyou:global name='web_templets_pc' /}/skin/css/style.css' type='text/css' media='all' />
+<script type='text/javascript' src='{eyou:global name='web_templets_pc' /}/skin/js/jquery.js'></script>
+<style>
+.container {
+	max-width: 800px
+}
+</style>
+<!--[if lt IE 9]><script src="{eyou:global name='web_templets_pc' /}/skin/js/html5.js"></script><![endif]-->
+</head>
+<body class="home blog m-home-most focusslide_s_m uimo ui-c3">
+<section class="container">
+  {eyou:include file="header.htm" /}
+  <div class="content-wrap">
+    <div class="content">
+      <div id="slider" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          {eyou:adv pid='1'  currentstyle="active"}
+          <li data-target="#slider" data-slide-to="{$key}" class="{$field.currentstyle}"></li>
+          {/eyou:adv}   
+        </ol>
+        <div class="carousel-inner">
+        {eyou:adv pid='1'  currentstyle="active"}
+          <div class="item {$field.currentstyle}"><a target="_blank" href="{$field.links}"><img src="{$field.litpic}"><span class="carousel-caption">{$field.title}</span><span class="carousel-bg"></span></a></div>
+        {/eyou:adv}     
+          
+        </div>
+        <a class="left carousel-control" href="#slider" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a><a class="right carousel-control" href="#slider" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></div>
+      <div class="focusmo">
+        <ul>
+        {eyou:arclist row='5' flag='h' titlelen='20'}
+          <li {eyou:eq name='$i' value='1'}class="large"{/eyou:eq}><a target="_blank" href="{$field.arcurl}"><img class="thumb" src="{$field.litpic}">
+            <h4>{$field.title}</h4>
+            </a></li>
+        {/eyou:arclist}        
+        </ul>
+      </div>
+      <div class="most-comment-posts">
+        <h3 class="title"><strong>一周热门排行</strong></h3>
+        <ul>
+        {eyou:arclist row='5' titlelen='40' orderby='click'}
+          <li>
+            <p class="text-muted"><span class="post-comments">阅读 ({$field.click})</span></p>
+            <span class="label label-{$i}">{$i}</span><a target="_blank" href="{$field.arcurl}" title="{$field.title}">{$field.title}</a></li>
+         {/eyou:arclist}   
+        </ul>
+      </div>
+      <div class="sticky">
+        <h3 class="title"><strong>热门推荐</strong></h3>
+        <ul>
+        {eyou:arclist row='4' flag='c' titlelen='20'}
+          <li class="item"><a target="_blank" href="{$field.arcurl}"><img src="{$field.litpic}" class="thumb"/>{$field.title}</a></li>
+        {/eyou:arclist}          
+        </ul>
+      </div>
+      <div id="index001"> 
+      {eyou:arclist row='10' titlelen='80' tagid='index001' }
+      <article class="excerpt excerpt-one">
+        <header><a class="cat label label-important" href="{$field.typeurl}">{$field.typename}<i class="label-arrow"></i></a>
+          <h2><a target="_blank" href="{$field.arcurl}" title="{$field.title}">{$field.title}</a></h2>
+          </header>
+        <p class="text-muted time"></p>
+        <p class="focus"><a target="_blank" href="{$field.arcurl}" class="thumbnail"><span><img src="{$field.litpic}" class="thumb"/></span></a></p>
+        <p class="note">{$field.seo_description|html_msubstr=###,0,80,true}</p>
+        <p class="text-muted views"><span class="post-views">阅读({$field.click})</span><span class="post-tags">标签：{eyou:tag sort='now' getall='0' row='10' id='field2'}
+<a href='{$field2.link}'>{$field2.tag}</a>&nbsp;&nbsp;{/eyou:tag}</span></p>
+      </article>
+      {/eyou:arclist}
+      </div>
+      {eyou:arcpagelist tagid='index001' pagesize='5'}
+      <div class="pagination pagination-multi" id="ajax-load-posts">
+        <ul>
+          <li class="next-page"> <a class="button" href="javascript:void(0);" {$field.onclick}>点击加载更多</a></li>
+        </ul>
+      </div>
+        {/eyou:arcpagelist}
+    </div>
+  </div>
+  {eyou:include file="right.htm" /}
+  {eyou:include file="footer.htm" /}
+</section>
+<script>
+window.jui = {
+	uri: '/',
+	roll: '1 2 3',
+	ajaxpager: '0'
+}
+</script> <script type='text/javascript' src='{eyou:global name='web_templets_pc' /}/skin/js/bootstrap.js'></script> 
+<script type='text/javascript' src='{eyou:global name='web_templets_pc' /}/skin/js/hammer.min.js'></script> 
+<script type='text/javascript' src='{eyou:global name='web_templets_pc' /}/skin/js/custom.js'></script> 
+<script type='text/javascript' src='{eyou:global name='web_templets_pc' /}/skin/js/wp-embed.min.js'></script>
+</body>
+</html>

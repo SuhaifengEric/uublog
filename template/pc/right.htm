@@ -1,0 +1,38 @@
+<div class="sidebar">
+    <div class="widget widget_textssr"><a class="style02"><strong>作者简介</strong>
+      <h2>{eyou:global name='web_name' /}</h2>
+      <p>{eyou:global name='web_attr_11' /}</p>
+      </a></div>
+    <div class="widget widget_searchbox">
+      <h3 class="title"><strong>搜索</strong></h3>
+      {eyou:searchform type='default'}
+        <form method="get" class="search-form" action="{$field.action}">
+          {$field.hidden}
+          <input class="form-control" name="keywords" type="text" placeholder="输入关键字" value="">
+          <input class="btn" type="submit" value="搜索">
+        </form>
+      {/eyou:searchform}
+    </div>
+    <div class="widget widget_postlist">
+      <h3 class="title"><strong>随机推荐</strong></h3>
+      <ul class="items-01">
+      {eyou:arclist row='4' titlelen='20' orderby='rand' channelid='1'}
+        <li><a target="_blank" href="{$field.arcurl}"><span class="thumbnail"><img src="{$field.litpic}" class="thumb"/></span><span class="text">{$field.title}</span><span class="text-muted post-views">阅读({$field.click})</span></a></li>
+     {/eyou:arclist}    
+      </ul>
+    </div>
+    <div class="widget widget_ssr">
+    {eyou:ad aid='4'}
+      <div class="widget_ssr_inner"><a href="{$field.links}" target="_blank"><img src="{$field.litpic}" alt='{$field.title}'></a></div>
+    {/eyou:ad} 
+    </div>
+    
+    <div class="widget widget_tags">
+      <h3 class="title"><strong>热门标签</strong></h3>
+      <ul class="widget_tags_inner">
+      {eyou:tag sort='now' getall='1' row='30'}
+        <li><a href="{$field.link}">{$field.tag}</a></li>
+      {/eyou:tag}  
+      </ul>
+    </div>
+  </div>
